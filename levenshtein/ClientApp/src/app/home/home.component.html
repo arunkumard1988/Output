@@ -1,0 +1,21 @@
+<h1>Levenshteins Calculator</h1>
+
+<form (ngSubmit)="onSubmit(FirstParam,SecondParam)" [formGroup]="personForm">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="control-label" for="FirstParam">First String</label><span>*</span>
+      <input type="text" class="form-control"  id="FirstParam" formControlName="FirstParam"  placeholder="Enter String 1"/>
+    </div>
+    <div class="form-group col-md-6">
+      <label class="control-label" for="SecondParam">Second String</label><span>*</span>
+      <input type="text" class="form-control" id="SecondParam" formControlName="SecondParam" placeholder="Enter String 2" />
+
+    </div>
+    <div class="form-group col-md-6" *ngIf="this.diffstring">
+      <label for="inputPassword4">Result : {{this.diffstring}}</label>
+
+    </div>
+  </div>
+  <button type="submit"  [disabled]="personForm.invalid" class="btn btn-success">Submit</button>
+
+</form>
